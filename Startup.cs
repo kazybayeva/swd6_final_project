@@ -23,6 +23,27 @@ namespace Madina
                 options.UseSqlite("Filename=database.db");
             });
             services.AddMvc();
+            
+            services.AddScoped<ActorsService>();
+            services.AddScoped<IActorsContext, ActorsContext>();
+
+            services.AddScoped<AwardsService>();
+            services.AddScoped<IAwardsContext, AwardsContext>();
+
+            services.AddScoped<DirectorsService>();
+            services.AddScoped<IDirectorsContext, DirectorsContext>();
+
+            services.AddScoped<MoviesService>();
+            services.AddScoped<IMoviesContext, MoviesContext>();
+
+            services.AddScoped<PostsService>();
+            services.AddScoped<IPostsContext, PostsContext>();
+
+            services.AddScoped<ProfileInfoesContext>();
+            services.AddScoped<IProfileInfoesContext, ProfileInfoesContext>();
+
+            services.AddScoped<UsersService>();
+            services.AddScoped<IUsersContext, UsersContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
